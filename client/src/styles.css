@@ -1,0 +1,281 @@
+:root {
+  --bg: #0f1420;
+  --card-bg: #1a2233;
+  --text: #e8ecf4;
+  --muted: #93a0b8;
+  --accent: #4f8cff;
+  --danger: #ff5c5c;
+  --correct: #3ddc84;
+  --missing: #ff5c5c;
+  --extra: #ffb347;
+  --substituted: #c792ea;
+  --border: #2a3448;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.app-title {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--accent);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.instruction-card h1 {
+  margin-top: 0;
+}
+
+.instruction-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: rgba(79, 140, 255, 0.1);
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.progress-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.progress-status {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.countdown-card {
+  text-align: center;
+}
+
+.countdown-message {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.countdown-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.recording-card {
+  text-align: center;
+}
+
+.recording-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.recording-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  margin: 16px 0;
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--danger);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.processing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.transcript-block {
+  margin: 16px 0;
+}
+
+.transcript-block h3 {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.transcript-text {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.metrics-table td, .metrics-table th {
+  border-bottom: 1px solid var(--border);
+  padding: 8px 6px;
+  text-align: left;
+}
+
+.metrics-table td:last-child, .metrics-table th:last-child {
+  text-align: right;
+}
+
+.word-diff {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.word-chip {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.word-correct {
+  background: rgba(61, 220, 132, 0.15);
+  color: var(--correct);
+}
+
+.word-missing {
+  background: rgba(255, 92, 92, 0.15);
+  color: var(--missing);
+  text-decoration: line-through;
+}
+
+.word-extra {
+  background: rgba(255, 179, 71, 0.15);
+  color: var(--extra);
+}
+
+.word-substituted {
+  background: rgba(199, 146, 234, 0.15);
+  color: var(--substituted);
+}
+
+.summary-question {
+  margin: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.summary-question-body {
+  margin-top: 10px;
+}
+
+.debug-panel {
+  margin-top: 24px;
+  background: var(--card-bg);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.85rem;
+}
+
+.debug-panel pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #0b0f18;
+  padding: 10px;
+  border-radius: 6px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.error-card {
+  border-color: var(--danger);
+}
+
+audio {
+  width: 100%;
+  margin-top: 8px;
+}

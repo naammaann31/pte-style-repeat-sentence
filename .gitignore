@@ -1,0 +1,7 @@
+node_modules/
+client/dist/
+server/python/.venv/
+data/reference_transcripts/*.json
+data/attempts/*.json
+storage/user_recordings/
+*.log

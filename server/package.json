@@ -1,0 +1,16 @@
+{
+  "name": "speaking-assessment-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js",
+    "setup:python": "python -m venv python\\.venv && python\\.venv\\Scripts\\python.exe -m pip install --upgrade pip && python\\.venv\\Scripts\\python.exe -m pip install -r requirements.txt"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^2.0.0"
+  }
+}
